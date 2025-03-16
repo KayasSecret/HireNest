@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/KayasSecret/HireNest/issues"
   },
-  "homepage": "https://github.com/KayasSecret/HireNest#readme"
+  "homepage": "https://github.com/KayasSecret/HireNest#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  }
 }
