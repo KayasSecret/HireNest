@@ -24,7 +24,8 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(reactBuildPath, "index.html"));
 });
 
-// Health Check Route
+// ✅ Health Check Route
+// Yeh check karne ke liye ek simple route hai jo confirm karega ki server chal raha hai ya nahi
 app.get("/", (req, res) => {
   res.send("✅ Server is working fine!");
 });
