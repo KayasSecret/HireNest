@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FaBars, FaTimes, FaShoppingCart, FaUser } from "react-icons/fa";
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
-import "../styles/Navbar.css";
+import "../../../styles/Navbar.css";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
