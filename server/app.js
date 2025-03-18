@@ -21,7 +21,7 @@ mongoose
 
 // Middleware to Serve React Build Files
 const reactBuildPath = path.join(__dirname, "../client/vite-project/dist");
-console.log("Serving React from:", reactBuildPath);
+  console.log("Serving React from:", reactBuildPath);
 app.use(express.static(reactBuildPath));
 
 // ✅ API Route for Fetching Data
