@@ -1,0 +1,125 @@
+/* Navbar.css */
+
+:root {
+    --primary-color: #4f46e5;
+    --text-color: #fff;
+    --bg-color: #1f2937;
+    --hover-color: #6366f1;
+}
+  
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+}
+
+.navbar {
+background-color: var(--bg-color);
+padding: 1rem 2rem;
+color: var(--text-color);
+}
+
+.container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 1200px;
+margin: auto;
+}
+
+.logo {
+font-size: 1.8rem;
+font-weight: bold;
+color: var(--primary-color);
+text-decoration: none;
+}
+
+.logo span {
+color: var(--text-color);
+}
+
+.hamburger {
+display: none;
+flex-direction: column;
+cursor: pointer;
+}
+
+.hamburger span {
+background: var(--text-color);
+height: 3px;
+width: 25px;
+margin-bottom: 4px;
+transition: 0.3s;
+}
+
+.nav-links {
+display: flex;
+gap: 1.5rem;
+align-items: center;
+}
+
+.nav-links a {
+color: var(--text-color);
+text-decoration: none;
+font-size: 1rem;
+transition: color 0.3s;
+}
+
+.nav-links a:hover {
+color: var(--hover-color);
+}
+
+.login-btn {
+background-color: var(--primary-color);
+color: var(--text-color);
+padding: 0.5rem 1.2rem;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background 0.3s;
+}
+
+.login-btn:hover {
+background-color: var(--hover-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+.hamburger {
+    display: flex;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-color);
+    padding: 1rem;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.4s ease;
+}
+
+.nav-links.open {
+    height: 200px;
+}
+
+.nav-links a {
+    padding: 0.5rem 0;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+}
+  
