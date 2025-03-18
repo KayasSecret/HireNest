@@ -11,7 +11,7 @@ function App() {
       <Navbar/>
       <div>
         <img src={logo} alt="Logo" />
-      </div>
+      </di   v>
     </>
   )
 }
