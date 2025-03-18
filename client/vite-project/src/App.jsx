@@ -1,8 +1,9 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import VisionVortex from "./components/VisionVortex.jsx"; // VisionVortex component ko import kar rahe hain
 import JobDesk from "./components/JobDesk.jsx"; // JobDesk component ko import kar rahe hain
 import CodeClinic from "./components/CodeClinic.jsx"; // CodeClinic component ko import kar rahe hain
+import Navbar from "./components/Navbar"; // ✅ Navbar import kiya
 import "./index.css"; // CSS file import kar rahe hain
 
 // 🏠 Home component - Yahan se user different pages par navigate kar sakta hai
@@ -22,12 +23,15 @@ function Home() {
 // 🌍 App component - Routes define kar raha hai
 function App() {
   return (
-    <Routes>
+    <Router> {/* ✅ Router ko wrap karna zaroori hai */}
+      <Navbar/> {/* ✅ Navbar ko Routes ke upar add kiya */}
+      <Routes>
       <Route path="/" element={<Home />} /> {/* Home page route */}
       <Route path="/vision-vortex" element={<VisionVortex />} /> {/* Vision Vortex page route */}
       <Route path="/job-desk" element={<JobDesk />} /> {/* Job Desk page route */}
       <Route path="/code-clinic" element={<CodeClinic />} /> {/* Code Clinic page route */}
     </Routes>
+    </Router>
   );
 }
 
