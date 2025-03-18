@@ -25,12 +25,12 @@ function App() {
   return (
     <Router> {/* ✅ Router ko wrap karna zaroori hai */}
       <Navbar/> {/* ✅ Navbar ko Routes ke upar add kiya */}
-      <Routes>
-      <Route path="/" element={<Home />} /> {/* Home page route */}
-      <Route path="/vision-vortex" element={<VisionVortex />} /> {/* Vision Vortex page route */}
-      <Route path="/job-desk" element={<JobDesk />} /> {/* Job Desk page route */}
-      <Route path="/code-clinic" element={<CodeClinic />} /> {/* Code Clinic page route */}
-    </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} /> {/* Home page route */}
+          <Route path="/vision-vortex" element={<VisionVortex />} /> {/* Vision Vortex page route */}
+          <Route path="/job-desk" element={<JobDesk />} /> {/* Job Desk page route */}
+          <Route path="/code-clinic" element={<CodeClinic />} /> {/* Code Clinic page route */}
+        </Routes>
     </Router>
   );
 }
