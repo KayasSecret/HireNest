@@ -7,20 +7,25 @@
   --hover-color: #6366f1;
 }
 
+#root {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
 }
 
 .container {
-  background: var(--bg-color);;
+  background: var(--bg-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90vw;
-  height: 60px;
-  padding:0px 1rem;
-  margin: auto;
+  width: 100vw;
+  height: fit-content;
+  padding: 0.8rem 2rem;
+  margin: 0;
 }
 
 .logo {
@@ -33,6 +38,39 @@ body {
 }
 
 .logo span {
+  color: var(--text-color);
+}
+
+.search-bar {
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+  background: var(--primary-color);
+  color: var(--text-color);
+  border-radius: 0.5rem;
+}
+
+.searchIcon {
+  background: var(--primary-color);
+  padding: 6px;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.search-bar input {
+  background: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  outline: none;
+  padding: 4px;
+}
+
+.search-bar input::placeholder {
   color: var(--text-color);
 }
 
@@ -56,15 +94,16 @@ body {
   align-items: center;
 }
 
-.nav-links a {
+.link{
   color: var(--text-color);
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.3s;
 }
 
-.nav-links a:hover {
+.link:hover, .submenu:hover {
   color: var(--hover-color);
+  cursor: pointer;
 }
 
 .login-btn {
@@ -81,6 +120,41 @@ body {
   background-color: var(--hover-color);
 }
 
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown {
+  position: absolute;
+  top: 55px;
+  background: var(--bg-color);
+  display: none;
+}
+
+.submenu {
+  padding: 0.5rem;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.show {
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.5s ease-in-out;
+  color: var(--text-color);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .hamburger {
@@ -91,23 +165,25 @@ body {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 105px;
-    left: 32px;
-    width: 93vw;
+    top: 55px;
+    left: 0px;
+    width: 100vw;
     background-color: var(--bg-color);
-    height:0;
+    height: 0;
     overflow: hidden;
     transition: all 0.5s ease-in-out;
   }
 
   .nav-links.open {
-    width: 92vw;
-    padding: 10px;
-    height: fit-content;
+    width: 100vw;
+    height: 220px;
   }
 
-  .nav-links a {
-    padding: 0.5rem 0;
+  .dropdown {
+    position: absolute;
+    top: 50px;
+    right: 200px;
+    text-align: start;
   }
 
   .hamburger.active span:nth-child(1) {
