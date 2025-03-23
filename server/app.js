@@ -1,8 +1,14 @@
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const app = express();
+app.use(cors());
+
+app.get('/api/data', (req, res) => {
+  res.json({ message: 'CORS Enabled Successfully!' });
+});
 
 // MongoDB Connection (Example)
 mongoose.connect('mongodb://127.0.0.1:27017/hirenest')
