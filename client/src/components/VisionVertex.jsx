@@ -2,7 +2,7 @@ import React from 'react'
 
 const VisionVertex = () => {
   return (
-    <div>VisionVertex</div>
+    <div className='content'>VisionVertex</div>
   )
 }
 

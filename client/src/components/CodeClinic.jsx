@@ -2,7 +2,7 @@ import React from 'react'
 
 const CodeClinic = () => {
   return (
-    <div>CodeClinic</div>
+    <div className='content'>CodeClinic</div>
   )
 }
 

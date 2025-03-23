@@ -3,3 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.content  {
+    margin-top: 60px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}

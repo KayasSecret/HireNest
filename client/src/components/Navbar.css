@@ -1,15 +1,16 @@
 /* Navbar.css */
 
 :root {
+  --base-color :#021526;
+  --base-color-light:#03346E;
+  --light-blue :rgb(178, 181, 249);
+  --hover-color-green: rgb(51, 129, 66);
+  --hover-color-blue: #6366f1;
+  --blue-btn: #007bff;
+  --green-btn:#4CAF50;
   --primary-color: #4f46e5;
   --text-color: #fff;
-  --bg-color: #1f2937;
-  --hover-color: #6366f1;
-}
-
-#root {
-  margin: 0;
-  padding: 0;
+  /* --bg-color: #1f2937; */
 }
 
 body {
@@ -18,14 +19,15 @@ body {
 }
 
 .container {
-  background: var(--bg-color);
+  background: transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100vw;
-  height: fit-content;
+  height: 60px;
   padding: 0.8rem 2rem;
-  margin: 0;
+  position: fixed;
+  top: 0;
 }
 
 .logo {
@@ -45,24 +47,26 @@ body {
   display: flex;
   gap: 0.2rem;
   align-items: center;
-  background: var(--primary-color);
+  background: transparent;
   color: var(--text-color);
   border-radius: 0.5rem;
+  border: 1px solid var(--light-blue);
 }
 
 .searchIcon {
-  background: var(--primary-color);
+  background: transparent;
   padding: 6px;
   height: 100%;
   width: 100%;
   cursor: pointer;
   border-top-right-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
+  color: var(--light-blue);
 }
 
 .search-bar input {
-  background: var(--primary-color);
-  color: var(--text-color);
+  background: transparent;
+  color: var(--light-blue);
   border: none;
   padding: 0.5rem;
   border-radius: 5px;
@@ -71,7 +75,7 @@ body {
 }
 
 .search-bar input::placeholder {
-  color: var(--text-color);
+  color: var(--light-blue);
 }
 
 .hamburger {
@@ -90,7 +94,7 @@ body {
 
 .nav-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   align-items: center;
 }
 
@@ -102,12 +106,13 @@ body {
 }
 
 .link:hover, .submenu:hover {
-  color: var(--hover-color);
+  color: var(--hover-color-blue);
   cursor: pointer;
 }
 
-.login-btn {
-  background-color: var(--primary-color);
+
+.btn {
+  /* background-color: var(--primary-color); */
   color: var(--text-color);
   padding: 0.5rem 1.2rem;
   border: none;
@@ -116,20 +121,40 @@ body {
   transition: background 0.3s;
 }
 
-.login-btn:hover {
-  background-color: var(--hover-color);
+.signupBtn{
+  background-color:var(--blue-btn);
+}
+.loginBtn{
+  background-color:var(--green-btn) ;
+}
+
+.loginBtn:hover {
+  background-color: var(--hover-color-green);
+}
+.signupBtn:hover {
+  background-color: var(--hover-color-blue);
 }
 
 .menu {
   display: flex;
   align-items: center;
+  padding: 1rem 0 ;
 }
 
 .dropdown {
   position: absolute;
   top: 55px;
-  background: var(--bg-color);
+  background: transparent;
   display: none;
+  text-align: start;
+}
+
+.menu:hover .dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  animation: fadeIn 0.5s ease-in-out;
+
 }
 
 .submenu {
@@ -138,25 +163,18 @@ body {
   text-decoration: none;
 }
 
-.show {
-  padding: 2px;
-  display: flex;
-  flex-direction: column;
-  animation: fadeIn 0.5s ease-in-out;
-  color: var(--text-color);
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
   to {
-    opacity: 0.5;
+    opacity: 1;
   }
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 850px) {
+
   .hamburger {
     display: flex;
   }
@@ -164,25 +182,29 @@ body {
   .nav-links {
     display: flex;
     flex-direction: column;
+    padding-left: 40px;
+    align-items: flex-start;
     position: absolute;
     top: 55px;
     left: 0px;
-    width: 100vw;
-    background-color: var(--bg-color);
-    height: 0;
+    width: 0;
     overflow: hidden;
     transition: all 0.5s ease-in-out;
   }
 
   .nav-links.open {
-    width: 100vw;
-    height: 220px;
+    width: 250px;
+    height: fit-content;
+  }
+
+  .link{
+    padding: 0.5rem 0;
   }
 
   .dropdown {
     position: absolute;
     top: 50px;
-    right: 200px;
+    left: 115px;
     text-align: start;
   }
 
@@ -197,4 +219,15 @@ body {
   .hamburger.active span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
   }
+}
+
+@media (max-width: 624px) {
+
+  .search-bar{
+    display: none;
+  }
+}
+
+@media (max-width: 424px) {
+
 }

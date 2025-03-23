@@ -12,25 +12,9 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
-  const toggleDropDown = () => {
-    setDropDown(!dropDown);
-  };
-
   return (
     <nav className="navbar">
       <div className="container">
-        {/* Logo */}
-        <a to="/" className="logo">
-          Hire<span>Nest</span>
-        </a>
-
-        {/* Search Bar */}
-        <div className="search-bar">
-          <input type="search" placeholder="Search" />
-          <FaSearch className="searchIcon" />
-        </div>
-
-        {/* Hamburger Icon */}
         <div
           className={`hamburger ${isOpen ? "active" : ""}`}
           onClick={toggleMenu}
@@ -40,23 +24,52 @@ const Navbar = () => {
           <span></span>
         </div>
 
+        {/* Logo */}
+        <a to="/" className="logo">
+          Hire<span>Nest</span>
+        </a>
+
         {/* Nav Links */}
         <ul className={`nav-links ${isOpen ? "open" : ""}`}>
-          <Link to="/home" className="link" >Home</Link>
-          <Link to="/services" className="menu link" onClick={toggleDropDown} >
+          <Link to="/home" className="link">
+            Home
+          </Link>
+          <Link to="/services" className="menu link">
             Services
             <IoMdArrowDropdown />
-            <ul className={`dropdown ${dropDown ? "show" : ""}`}>
-              <Link to="/codeClinic" className="submenu">Code Clinic</Link>
-              <Link to="/hireDesk" className="submenu">Hire Desk</Link>
-              <Link to="/visionVertex" className="submenu">Vision Vertex</Link>
+            <ul className="dropdown">
+              <Link to="/codeClinic" className="submenu">
+                Code Clinic
+              </Link>
+              <Link to="/hireDesk" className="submenu">
+                Hire Desk
+              </Link>
+              <Link to="/visionVertex" className="submenu">
+                Vision Vertex
+              </Link>
             </ul>
           </Link>
 
-          <Link to="/about" className="link">About</Link>
-          <Link to="/contact" className="link">Contact</Link>
-          <button className="login-btn">Login</button>
+          <Link to="/about" className="link">
+            About
+          </Link>
+          <Link to="/contact" className="link">
+            Contact
+          </Link>
         </ul>
+
+        {/* Search Bar */}
+        <div className="search-bar">
+          <input type="search" placeholder="Search" />
+          <FaSearch className="searchIcon" />
+        </div>
+
+        <div className="flex">
+          <button className="btn loginBtn">LogIn</button>
+          <button className="btn signupBtn">SignUp</button>
+        </div>
+
+        {/* Hamburger Icon */}
       </div>
     </nav>
   );

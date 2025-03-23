@@ -2,7 +2,7 @@ import React from 'react'
 
 const HireDesk = () => {
   return (
-    <div>HireDesk</div>
+    <div className='content'>HireDesk</div>
   )
 }
 
