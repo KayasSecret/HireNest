@@ -65,8 +65,10 @@ const Navbar = () => {
         </div>
 
         <div className="flex">
+          <ul>
           <button className="btn loginBtn">LogIn</button>
           <button className="btn signupBtn">SignUp</button>
+          </ul>
         </div>
 
         {/* Hamburger Icon */}
