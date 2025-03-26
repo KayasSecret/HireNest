@@ -8,6 +8,8 @@ import About from "./components/About";
 import CodeClinic from "./components/CodeClinic";
 import HireDesk from "./components/HireDesk";
 import VisionVertex from "./components/VisionVertex";
+import Signup from "./components/Signup";
+// import Login from "./components/Login";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
         <Route path="/codeClinic" element={<CodeClinic />} />
         <Route path="/hireDesk" element={<HireDesk />} />
         <Route path="/visionVertex" element={<VisionVertex />} />
+        <Route path="/signup" element={<Signup />} />
+        {/* <Route path="/login" element={<Login />} /> */}
       </Routes>
 
      

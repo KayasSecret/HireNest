@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { FaUser, FaLock, FaEnvelope } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";

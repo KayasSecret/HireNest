@@ -66,8 +66,8 @@ const Navbar = () => {
 
         <div className="flex">
           <ul>
-          <button className="btn loginBtn">LogIn</button>
-          <button className="btn signupBtn">SignUp</button>
+          <Link className="btn loginBtn">LogIn</Link>
+          <Link to="/signup" className="btn signupBtn">SignUp</Link>
           </ul>
         </div>
 
