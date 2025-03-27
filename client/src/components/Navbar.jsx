@@ -13,67 +13,65 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar">
-      <div className="nav-container">
-        <div
-          className={`hamburger ${isOpen ? "active" : ""}`}
-          onClick={toggleMenu}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        {/* Logo */}
-        <a to="/" className="logo">
-          Hire<span>Nest</span>
-        </a>
-
-        {/* Nav Links */}
-        <ul className={`nav-links ${isOpen ? "open" : ""}`}>
-          <Link to="/home" className="link">
-            Home
-          </Link>
-          <Link to="/services" className="menu link">
-            Services
-            <IoMdArrowDropdown />
-            <ul className="dropdown">
-              <Link to="/codeClinic" className="submenu">
-                Code Clinic
-              </Link>
-              <Link to="/hireDesk" className="submenu">
-                Hire Desk
-              </Link>
-              <Link to="/visionVertex" className="submenu">
-                Vision Vertex
-              </Link>
-            </ul>
-          </Link>
-
-          <Link to="/about" className="link">
-            About
-          </Link>
-          <Link to="/contact" className="link">
-            Contact
-          </Link>
-        </ul>
-
-        {/* Search Bar */}
-        <div className="search-bar">
-          <input type="search" placeholder="Search" />
-          <FaSearch className="searchIcon" />
-        </div>
-
-        <div className="flex">
-          <ul>
-          <Link className="btn loginBtn">LogIn</Link>
-          <Link to="/signup" className="btn signupBtn">SignUp</Link>
-          </ul>
-        </div>
-
-        {/* Hamburger Icon */}
+    <div className="nav-container">
+      <div
+        className={`hamburger ${isOpen ? "active" : ""}`}
+        onClick={toggleMenu}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-    </nav>
+
+      {/* Logo */}
+      <a to="/" className="logo">
+        Hire<span>Nest</span>
+      </a>
+
+      {/* Nav Links */}
+      <ul className={`nav-links ${isOpen ? "open" : ""}`}>
+        <Link to="/home" className="link">
+          Home
+        </Link>
+        <Link to="/services" className="menu link">
+          Services
+          <IoMdArrowDropdown />
+          <ul className="dropdown">
+            <Link to="/codeClinic" className="submenu">
+              Code Clinic
+            </Link>
+            <Link to="/hireDesk" className="submenu">
+              Hire Desk
+            </Link>
+            <Link to="/visionVertex" className="submenu">
+              Vision Vertex
+            </Link>
+          </ul>
+        </Link>
+
+        <Link to="/about" className="link">
+          About
+        </Link>
+        <Link to="/contact" className="link">
+          Contact
+        </Link>
+      </ul>
+
+      {/* Search Bar */}
+      <div className="search-bar">
+        <input type="search" placeholder="Search" />
+        <FaSearch className="searchIcon" />
+      </div>
+
+      <div className="flex btn-container">
+          <Link to="/" className="btn loginBtn">LogIn</Link>
+          <Link to="/signup" className="btn signupBtn">
+            SignUp
+          </Link>
+      </div>
+
+      {/* Hamburger Icon */}
+    </div>
   );
 };
 

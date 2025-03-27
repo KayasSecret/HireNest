@@ -1,13 +1,13 @@
 /* Navbar.css */
 
 :root {
-  --base-color :#021526;
-  --base-color-light:#03346E;
-  --light-blue :rgb(178, 181, 249);
+  --base-color: #021526;
+  --base-color-light: #03346e;
+  --light-blue: rgb(178, 181, 249);
   --hover-color-green: rgb(51, 129, 66);
   --hover-color-blue: #6366f1;
   --blue-btn: #007bff;
-  --green-btn:#4CAF50;
+  --green-btn: #4caf50;
   --primary-color: #4f46e5;
   --text-color: #fff;
   /* --bg-color: #1f2937; */
@@ -18,12 +18,13 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.navbar{
+/* .navbar{
   width: 100vw;
-}
+  background-color: var(--base-color);
+} */
 
 .nav-container {
-  background: transparent;
+  background: var(--base-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -102,34 +103,34 @@ body {
   align-items: center;
 }
 
-.link{
+.link {
   color: var(--text-color);
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.3s;
 }
 
-.link:hover, .submenu:hover {
+.link:hover,
+.submenu:hover {
   color: var(--hover-color-blue);
   cursor: pointer;
 }
 
-
 .btn {
   /* background-color: var(--primary-color); */
   color: var(--text-color);
-  padding: 0.5rem 1.2rem;
+  padding: 5px 12px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   transition: background 0.3s;
 }
 
-.signupBtn{
-  background-color:var(--blue-btn);
+.signupBtn {
+  background-color: var(--blue-btn);
 }
-.loginBtn{
-  background-color:var(--green-btn) ;
+.loginBtn {
+  background-color: var(--green-btn);
 }
 
 .loginBtn:hover {
@@ -142,7 +143,7 @@ body {
 .menu {
   display: flex;
   align-items: center;
-  padding: 1rem 0 ;
+  padding: 1rem 0;
 }
 
 .dropdown {
@@ -158,7 +159,6 @@ body {
   flex-direction: column;
   gap: 0.5rem;
   animation: fadeIn 0.5s ease-in-out;
-
 }
 
 .submenu {
@@ -178,7 +178,6 @@ body {
 
 /* Responsive Design */
 @media (max-width: 850px) {
-
   .hamburger {
     display: flex;
   }
@@ -186,7 +185,6 @@ body {
   .nav-links {
     display: flex;
     flex-direction: column;
-    padding-left: 40px;
     align-items: flex-start;
     position: absolute;
     top: 55px;
@@ -194,21 +192,24 @@ body {
     width: 0;
     overflow: hidden;
     transition: all 0.5s ease-in-out;
+    background-color: var(--base-color);
   }
 
   .nav-links.open {
-    width: 250px;
-    height: fit-content;
+    z-index: 99;
+    width: 220px;
+    height:100vh;
+    padding-left: 30px;
   }
 
-  .link{
+  .link {
     padding: 0.5rem 0;
   }
 
   .dropdown {
     position: absolute;
     top: 50px;
-    left: 115px;
+    left: 105px;
     text-align: start;
   }
 
@@ -226,12 +227,10 @@ body {
 }
 
 @media (max-width: 624px) {
-
-  .search-bar{
+  .search-bar {
     display: none;
   }
 }
 
 @media (max-width: 424px) {
-
 }
